@@ -1,0 +1,215 @@
+/*==================================================
+PLANOS
+==================================================*/
+
+.plans {
+  position: relative;
+  overflow: hidden;
+}
+
+.plans::before {
+  content: "";
+  position: absolute;
+  right: -220px;
+  top: -180px;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(
+    circle,
+    rgba(58, 174, 255, 0.08),
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+/*====================
+GRID
+====================*/
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 60px;
+  align-items: stretch;
+}
+
+/*====================
+CARD
+====================*/
+
+.plan-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #141b2d, #0d1324);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: 0.35s;
+}
+
+.plan-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(58, 174, 255, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+/*====================
+DESTAQUE
+====================*/
+
+.featured {
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 35px rgba(58, 174, 255, 0.12);
+}
+
+.popular-badge {
+  position: absolute;
+  left: 50%;
+  top: -12px;
+  transform: translateX(-50%);
+  padding: 6px 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--primary2));
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/*====================
+HEADER
+====================*/
+
+.plan-header {
+  margin-bottom: 22px;
+}
+
+.plan-tag {
+  display: inline-flex;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(58, 174, 255, 0.08);
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.plan-header h3 {
+  font-size: 26px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.plan-description {
+  font-size: 14px;
+  color: #b8c4db;
+  line-height: 1.6;
+}
+
+/*====================
+LISTA
+====================*/
+
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin: 0 0 24px;
+  flex: 1;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #d7e0f2;
+  line-height: 1.45;
+}
+
+.plan-features i {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: rgba(58, 174, 255, 0.12);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/*====================
+BOTÃO
+====================*/
+
+.plan-card .btn {
+  width: 100%;
+  padding: 13px;
+  margin-top: auto;
+  font-size: 14px;
+}
+
+/*====================
+RESPONSIVO
+====================*/
+
+@media (max-width: 1100px) {
+  .plans-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featured {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .plans-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 45px;
+  }
+
+  .plan-card {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .plan-header h3 {
+    font-size: 22px;
+  }
+
+  .plan-description,
+  .plan-features li {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .plan-card {
+    padding: 18px;
+  }
+
+  .plan-header h3 {
+    font-size: 20px;
+  }
+
+  .plan-tag {
+    font-size: 10px;
+  }
+
+  .popular-badge {
+    font-size: 10px;
+    padding: 5px 14px;
+  }
+
+  .plan-card .btn {
+    font-size: 13px;
+    padding: 12px;
+  }
+}

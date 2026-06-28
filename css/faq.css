@@ -1,0 +1,249 @@
+/*==================================================
+FAQ
+==================================================*/
+
+.faq{
+    position:relative;
+    overflow:hidden;
+}
+
+.faq::before{
+    content:"";
+    position:absolute;
+    left:-250px;
+    bottom:-250px;
+    width:650px;
+    height:650px;
+    background:radial-gradient(circle,rgba(58,174,255,.08),transparent 70%);
+    z-index:-1;
+}
+
+/*==========================
+CONTAINER
+==========================*/
+
+.faq-container{
+
+    max-width:900px;
+
+    margin:70px auto 0;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:16px;
+}
+
+/*==========================
+ITEM
+==========================*/
+
+.faq-item{
+
+    background:rgba(18,25,45,.92);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    transition:.3s;
+}
+
+.faq-item:hover{
+
+    transform:translateY(-3px);
+
+    border-color:rgba(58,174,255,.25);
+
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+}
+
+/*==========================
+PERGUNTA
+==========================*/
+
+.faq-question{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 24px;
+
+    background:none;
+
+    border:none;
+
+    cursor:pointer;
+
+    color:#fff;
+
+    text-align:left;
+
+    font-size:17px;
+
+    font-weight:600;
+}
+
+.faq-question span{
+
+    flex:1;
+
+    padding-right:15px;
+}
+
+.faq-question i{
+
+    width:36px;
+
+    height:36px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    border:1px solid rgba(58,174,255,.2);
+
+    color:var(--primary);
+
+    font-size:18px;
+
+    transition:.3s;
+}
+
+/*==========================
+RESPOSTA
+==========================*/
+
+.faq-answer{
+
+    max-height:0;
+
+    overflow:hidden;
+
+    transition:max-height .35s ease;
+}
+
+.faq-answer p{
+
+    padding:0 24px 22px;
+
+    color:#AEB9D3;
+
+    line-height:1.75;
+
+    font-size:15px;
+}
+
+/*==========================
+ATIVO
+==========================*/
+
+.faq-item.active{
+
+    border-color:rgba(58,174,255,.35);
+}
+
+.faq-item.active .faq-answer{
+
+    max-height:220px;
+}
+
+.faq-item.active .faq-question i{
+
+    transform:rotate(45deg);
+
+    background:linear-gradient(135deg,var(--primary),var(--primary2));
+
+    color:#fff;
+
+    border-color:transparent;
+}
+
+/*==========================
+ANIMAÇÃO
+==========================*/
+
+.faq-item{
+
+    animation:fadeUp .6s ease both;
+}
+
+.faq-item:nth-child(2){animation-delay:.05s;}
+.faq-item:nth-child(3){animation-delay:.10s;}
+.faq-item:nth-child(4){animation-delay:.15s;}
+.faq-item:nth-child(5){animation-delay:.20s;}
+.faq-item:nth-child(6){animation-delay:.25s;}
+.faq-item:nth-child(7){animation-delay:.30s;}
+.faq-item:nth-child(8){animation-delay:.35s;}
+
+/*==========================
+TABLET
+==========================*/
+
+@media(max-width:768px){
+
+.faq-container{
+
+    margin-top:55px;
+}
+
+.faq-question{
+
+    padding:18px 20px;
+
+    font-size:16px;
+}
+
+.faq-answer p{
+
+    padding:0 20px 20px;
+
+    font-size:14px;
+}
+
+}
+
+/*==========================
+CELULAR
+==========================*/
+
+@media(max-width:480px){
+
+.faq-question{
+
+    padding:16px 18px;
+
+    font-size:15px;
+}
+
+.faq-question i{
+
+    width:32px;
+
+    height:32px;
+
+    font-size:16px;
+}
+
+.faq-answer p{
+
+    padding:0 18px 18px;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+}

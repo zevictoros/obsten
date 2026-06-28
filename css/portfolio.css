@@ -1,0 +1,256 @@
+/*=========================================
+PORTFÓLIO
+=========================================*/
+
+.portfolio {
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio::before {
+  content: "";
+  position: absolute;
+  width: 550px;
+  height: 550px;
+  right: -180px;
+  top: -180px;
+  background: radial-gradient(
+    circle,
+    rgba(58, 174, 255, 0.08),
+    transparent 70%
+  );
+  z-index: -1;
+}
+
+/* GRID */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-top: 60px;
+}
+
+/* CARD */
+
+.portfolio-card {
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #131a2d, #0d1323);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.35s;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(58, 174, 255, 0.35);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* DESTAQUE */
+
+.portfolio-card.featured {
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 30px rgba(58, 174, 255, 0.12);
+}
+
+/* IMAGEM */
+
+.portfolio-image {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.portfolio-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.45s;
+}
+
+.portfolio-card:hover img {
+  transform: scale(1.04);
+}
+
+/* STATUS */
+
+.portfolio-status {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.online {
+  background: #2563eb;
+}
+
+.private {
+  background: #dc2626;
+}
+
+.featured-status {
+  background: linear-gradient(90deg, var(--primary), var(--primary2));
+}
+
+/* CONTEÚDO */
+
+.portfolio-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 22px;
+}
+
+.portfolio-category {
+  color: var(--primary);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.portfolio-content h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.portfolio-content p {
+  color: #b8c4db;
+  font-size: 15px;
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+
+/* TAGS */
+
+.portfolio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.portfolio-tags span {
+  padding: 6px 11px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #d8e0f0;
+  font-size: 11px;
+}
+
+/* BOTÃO */
+
+.portfolio-card .btn {
+  width: 100%;
+  margin-top: auto;
+  padding: 13px;
+  font-size: 14px;
+}
+
+/* CTA */
+
+.portfolio-cta {
+  margin-top: 70px;
+  padding: 45px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, #141d33, #101828);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.portfolio-cta h3 {
+  font-size: 34px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.portfolio-cta p {
+  max-width: 700px;
+  margin: 0 auto 25px;
+  color: #b8c4db;
+  line-height: 1.7;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 1100px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .portfolio-card.featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 45px;
+  }
+
+  .portfolio-image {
+    height: 200px;
+  }
+
+  .portfolio-content {
+    padding: 18px;
+  }
+
+  .portfolio-content h3 {
+    font-size: 22px;
+  }
+
+  .portfolio-content p {
+    font-size: 14px;
+  }
+
+  .portfolio-cta {
+    padding: 35px 22px;
+  }
+
+  .portfolio-cta h3 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-image {
+    height: 180px;
+  }
+
+  .portfolio-content {
+    padding: 16px;
+  }
+
+  .portfolio-content h3 {
+    font-size: 20px;
+  }
+
+  .portfolio-category {
+    font-size: 12px;
+  }
+
+  .portfolio-tags span {
+    font-size: 10px;
+    padding: 5px 9px;
+  }
+
+  .portfolio-card .btn {
+    font-size: 13px;
+    padding: 12px;
+  }
+}

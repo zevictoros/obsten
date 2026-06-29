@@ -106,6 +106,68 @@ HEADER
   font-size: 14px;
   color: #b8c4db;
   line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/*====================
+PREÇOS
+====================*/
+
+.plan-pricing {
+  margin: 22px 0 26px;
+  padding: 14px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.plan-monthly,
+.plan-setup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.plan-monthly {
+  margin-bottom: 12px;
+}
+
+.price-label {
+  font-size: 0.82rem;
+  color: #9aa8c3;
+}
+
+.price-value {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.price-value .currency {
+  font-size: 0.95rem;
+}
+
+.price-value small {
+  font-size: 0.8rem;
+  color: #9aa8c3;
+  margin-left: 3px;
+}
+
+.setup-price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.old-price {
+  color: #6f7d96;
+  text-decoration: line-through;
+  font-size: 0.9rem;
+}
+
+.new-price {
+  color: #35d07f;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
 /*====================
@@ -152,6 +214,7 @@ BOTÃO
   padding: 13px;
   margin-top: auto;
   font-size: 14px;
+  border: 1px solid var(--primary);
 }
 
 /*====================
@@ -188,6 +251,18 @@ RESPONSIVO
   .plan-features li {
     font-size: 13px;
   }
+
+  .plan-pricing {
+    padding: 18px;
+  }
+
+  .price-value {
+    font-size: 1.8rem;
+  }
+
+  .new-price {
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -211,5 +286,17 @@ RESPONSIVO
   .plan-card .btn {
     font-size: 13px;
     padding: 12px;
+  }
+
+  .price-value {
+    font-size: 1.6rem;
+  }
+
+  .price-value .currency {
+    font-size: 0.9rem;
+  }
+
+  .new-price {
+    font-size: 18px;
   }
 }
